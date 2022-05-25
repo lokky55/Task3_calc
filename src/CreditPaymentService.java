@@ -1,9 +1,9 @@
 public class CreditPaymentService {
-    public float calculate(int summ, int years, float percent) {
+    public double calculate(int summ, int years, double percent) {
         int months = years * 12;
-        float intRate = percent / (100 * 12);
-        float fraction = (float) (intRate / (1 - (Math.pow(1 + intRate, -months))));
-        float monthPayment = summ * fraction;
+        double intRate = percent / (100 * 12);
+        double fraction = intRate / (1 - (Math.pow(1 + intRate, -months)));
+        double monthPayment = summ * fraction;
         return monthPayment;
     }
 }
